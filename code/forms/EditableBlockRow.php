@@ -8,14 +8,14 @@
  * @author Mellisa Hankins <mell@milkywaymultimedia.com.au>
  */
 
-use RequestHandler;
-use GridField_HTMLProvider;
-use GridField_SaveHandler;
-use GridField_URLHandler;
-use GridField_ColumnProvider;
-use Validator;
-use FieldList;
-use Session;
+use \RequestHandler;
+use \GridField_HTMLProvider;
+use \GridField_SaveHandler;
+use \GridField_URLHandler;
+use \GridField_ColumnProvider;
+use \Validator;
+use \FieldList;
+use \Session;
 
 class EditableBlockRow extends RequestHandler implements GridField_HTMLProvider, GridField_SaveHandler, GridField_URLHandler, GridField_ColumnProvider
 {
