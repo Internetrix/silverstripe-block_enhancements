@@ -7,7 +7,7 @@
  * @package milkyway-multimedia/ss-gridfield-utils
  * @author Mellisa Hankins <mell@milkywaymultimedia.com.au>
  */
-
+/* doesn't seem to need these here
 use \RequestHandler;
 use \GridField_HTMLProvider;
 use \GridField_SaveHandler;
@@ -16,7 +16,7 @@ use \GridField_ColumnProvider;
 use \Validator;
 use \FieldList;
 use \Session;
-
+*/
 class EditableBlockRow extends RequestHandler implements GridField_HTMLProvider, GridField_SaveHandler, GridField_URLHandler, GridField_ColumnProvider
 {
     public $column = '_OpenRowForEditing';
