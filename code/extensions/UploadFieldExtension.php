@@ -57,8 +57,8 @@ class UploadFieldExtension extends Extension {
 
 		foreach($fileVars as $name => $attributes) {
 			$nameParts = explode('][', trim(substr($fieldName, strlen($name) + 1), ']'));
-			$newAttributes = [];
-			$newValue = [];
+			$newAttributes = array();
+			$newValue = array();
 			$values = null;
 
 			foreach($attributes as $attributeName => $attributeValues) {
