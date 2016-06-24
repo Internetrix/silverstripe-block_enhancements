@@ -177,7 +177,7 @@ class EditableBlockRow extends RequestHandler implements GridField_HTMLProvider,
      */
     public function getColumnsHandled($gridField)
     {
-        return [$this->column];
+        return array($this->column);
     }
 
     /**
@@ -346,7 +346,7 @@ class EditableBlockRow extends RequestHandler implements GridField_HTMLProvider,
             if ($this->fields instanceof \FieldList) {
                 $fields = $this->fields;
             } elseif (is_callable($this->fields)) {
-                $fields = call_user_func_array($this->fields, [$record, $grid, $this]);
+                $fields = call_user_func_array($this->fields, array($record, $grid, $this));
             } else {
                 $fields = \FieldList::create($this->fields);
             }
