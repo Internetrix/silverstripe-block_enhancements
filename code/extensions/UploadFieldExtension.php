@@ -13,9 +13,9 @@ use Extension;
 use Folder;
 
 class UploadFieldExtension extends Extension {
-	private static $allowed_actions = [
+	private static $allowed_actions = array(
 		'index',
-	];
+	);
 
 	public function beforeCallActionHandler($request, &$action) {
 		if($this->owner->hasClass('ss-upload-to-folder'))
