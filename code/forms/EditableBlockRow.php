@@ -525,6 +525,6 @@ class EditableBlockRow extends RequestHandler implements GridField_HTMLProvider,
 
     protected function getComponentName()
     {
-        return str_replace(['\\', '-'], '_', __CLASS__ . '_' . $this->urlSegment);
+        return str_replace(array('\\', '-'), '_', __CLASS__ . '_' . $this->urlSegment);
     }
 }
