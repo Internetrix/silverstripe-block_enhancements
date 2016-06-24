@@ -38,10 +38,10 @@ class EditableBlockRow extends RequestHandler implements GridField_HTMLProvider,
 
     private $workingGrid;
 
-    private static $allowed_actions = [
+    private static $allowed_actions = array(
         'loadItem',
         'handleForm',
-    ];
+    );
 
     /**
      * @param FieldList|callable|array $fields the fields to display in inline form
@@ -146,10 +146,10 @@ class EditableBlockRow extends RequestHandler implements GridField_HTMLProvider,
 
     public function getURLHandlers($gridField)
     {
-        return [
+        return array(
             $this->urlSegment . '/load/$ID' => 'loadItem',
             $this->urlSegment . '/form/$ID' => 'handleForm',
-        ];
+        );
     }
 
     /**
@@ -226,13 +226,13 @@ class EditableBlockRow extends RequestHandler implements GridField_HTMLProvider,
         $this->workingGrid = $gridField;
 
         if (!$this->checkPermission($gridField, $record, $columnName)) {
-            return [];
+            return array();
         }
 
-        return [
+        return array(
             'data-link' => $this->Link('load', $record->ID),
             'class'     => 'ss-gridfield-editable-row--icon-holder',
-        ];
+        );
     }
 
     /**
@@ -247,9 +247,9 @@ class EditableBlockRow extends RequestHandler implements GridField_HTMLProvider,
     public function getColumnMetadata($gridField, $columnName)
     {
         if ($columnName == $this->column) {
-            return [
+            return array(
                 'title' => '',
-            ];
+            );
         }
     }
 
@@ -295,7 +295,7 @@ class EditableBlockRow extends RequestHandler implements GridField_HTMLProvider,
             $form->loadDataFrom($fields);
             $form->saveInto($item);
             $extra = method_exists($list, 'getExtraFields') ? array_intersect_key($form->Data,
-                (array)$list->getExtraFields()) : [];
+                (array)$list->getExtraFields()) : array();
 
             // FIX: nonsaving boolean/checkboxfields (unchecked will not be posted)
             foreach ($form->Fields()->saveableFields() as $formfield) {
@@ -384,7 +384,7 @@ class EditableBlockRow extends RequestHandler implements GridField_HTMLProvider,
             if ($this->validator instanceof \Validator) {
                 return $this->validator;
             } elseif (is_callable($this->validator)) {
-                return call_user_func_array($this->validator, [$record, $grid, $this]);
+                return call_user_func_array($this->validator, array($record, $grid, $this));
             } else {
                 return \Validator::create($this->validator);
             }
@@ -456,12 +456,12 @@ class EditableBlockRow extends RequestHandler implements GridField_HTMLProvider,
             $countUntilThisColumn = 0;
         }
 
-        return $record->customise([
+        return $record->customise(array(
             'Form'              => $form,
             'ColumnCount'       => count($grid->getColumns()),
             'PrevColumnsCount'  => $countUntilThisColumn,
             'OtherColumnsCount' => count($grid->getColumns()) - $countUntilThisColumn,
-        ])->renderWith(array_merge((array)$this->template, ['GridField_EditableBlockRow']));
+        ))->renderWith(array_merge((array)$this->template, array('GridField_EditableBlockRow')));
     }
 
     protected function getRecordFromRequest($grid, $request)
@@ -507,7 +507,7 @@ class EditableBlockRow extends RequestHandler implements GridField_HTMLProvider,
         }
     }
 
-    private $canView = [];
+    private $canView = array();
 
     protected function checkPermission($gridField, $record, $columnName)
     {
