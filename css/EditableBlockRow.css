@@ -25,14 +25,6 @@
 .ss-gridfield-editable-row--fields .middleColumn {
     max-width: 600px;
 }
-.field.ss-gridfield .ss-gridfield-editable-row--fields .description,
-.ss-gridfield-editable-row--fields .htmleditor .middleColumn,
-.ss-gridfield-editable-row--fields .ss-uploadfield .middleColumn {
-    /* margin-left: 0px; */
-    /* clear: left; */
-    margin-left: 184px;
-    clear: none;
-}
 .cms .ss-gridfield-editable-rows table.ss-gridfield-table tbody tr {
     cursor: auto !important;
 }
@@ -49,3 +41,24 @@
 .ss-gridfield-blockenhancements .ss-gridfield-item td,
 .ss-gridfield-blockenhancements .ss-gridfield-editable-row--row td
 { border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+body .field.ss-gridfield .ss-gridfield-editable-row--fields .description,
+body .ss-gridfield-editable-row--fields .htmleditor .middleColumn,
+body .ss-gridfield-editable-row--fields .ss-uploadfield .middleColumn {
+    margin-left: 0px;
+    clear: left;
+}
+body .block-type .chzn-container {
+	position:absolute;
+}
+body.cms fieldset.ss-gridfield-editable-row--fields table.ss-gridfield-table thead tr:not(.sortable-header) th button,
+body.cms fieldset.ss-gridfield-editable-row--fields .middleColumn button {
+	background-color: #e6e6e6;
+	border:1px solid #c0c0c2;
+}
+body.cms fieldset.ss-gridfield-editable-row--fields table.ss-gridfield-table thead tr:not(.sortable-header) th button:hover,
+body.cms fieldset.ss-gridfield-editable-row--fields .middleColumn button:hover {
+	background-color: #d6D6D6;
+	opacity:1;
+	color:black !important;
+	box-shadow:0 0 5px #b3b3b3;
+}
