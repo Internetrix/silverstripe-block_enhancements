@@ -139,3 +139,67 @@ body.cms fieldset.ss-gridfield-editable-row--fields .middleColumn button:hover {
 .cms table.ss-gridfield-table tr td .mceEditor td {
     padding: 0
 }
+.cms .ss-gridfield-editable-row--row .ss-gridfield-editable-row--fields .field{
+	margin-bottom: 15px; 
+}
+
+.cms .ss-gridfield-editable-row--fields .field .dropzone-holder {
+    min-height:50px;
+}
+.cms .ss-gridfield-editable-row--fields .field .middleColumn,
+.cms .ss-gridfield-editable-row--fields .field .dropzone-holder {
+    clear: both;
+    margin-left: 0;
+    margin-bottom: 0;
+}
+
+.cms table.ss-gridfield-table tbody td {
+	max-width: inherit;
+}
+
+.cms fieldset.ss-gridfield-editable-row--fields table.ss-gridfield-table thead tr:not(.sortable-header) th button, 
+.cms fieldset.ss-gridfield-editable-row--fields .middleColumn button {
+    background-color: #e6e6e6;
+    border: 1px solid #c0c0c2;
+}
+
+.cms fieldset.ss-gridfield-editable-row--fields .ui-tabs .ui-tabs-panel>*, 
+.cms fieldset.ss-gridfield-editable-row--fields fieldset.ss-gridfield>:not(table), 
+.cms fieldset.ss-gridfield-editable-row--fields>.field, 
+.cms fieldset.ss-gridfield-editable-row--fields>.tabset:first-child:not(.ss-tabset-tabshidden)>.ui-tabs-nav+* {
+	margin:initial;
+}
+.cms fieldset.ss-gridfield-editable-row--fields>.tabset:first-child:not(.ss-tabset-tabshidden)>.ui-tabs-nav+*{
+	padding-top: initial;
+}
+.cms .ss-gridfield-editable-row--row fieldset.ss-gridfield-editable-row--fields fieldset.ss-gridfield {
+	padding:10px 0 0;
+}*/
+.cms .ss-gridfield-editable-row--fields .optionset li{
+	width: 189px; 
+}
+.cms .ss-gridfield-editable-row--fields>.tabset:first-child:not(.ss-tabset-tabshidden)>.ui-tabs-nav{
+	margin: 0 0 7px;
+	padding: 0;
+}
+.cms .ss-gridfield-editable-row--row fieldset.ss-gridfield-editable-row--fields {
+	padding: 0 10px 0 10px;
+}
+.cms fieldset.ss-gridfield-editable-row--fields table.ss-gridfield-table tfoot tr:first-child td:first-child, 
+.cms fieldset.ss-gridfield-editable-row--fields table.ss-gridfield-table tfoot tr:first-child td:last-child{
+	border-radius: 0 0 5px 5px;
+}
+.cms fieldset.ss-gridfield-editable-row--fields table.ss-gridfield-table thead tr:first-child th:first-child, 
+.cms fieldset.ss-gridfield-editable-row--fields table.ss-gridfield-table thead tr:first-child th:last-child {
+	border-radius: 5px 5px 0 0;
+}
+.cms .ss-gridfield-add-new-multi-class { 
+	position:absolute;
+}
+.cms .select2-selection__rendered img, .cms .select2-results img{
+	max-width:32px;
+}
+.cms .ss-gridfield-blockenhancements .ss-gridfield-add-new-multi-class .select2-selection{
+	min-height: auto;
+	margin-top: 8px;
+}
