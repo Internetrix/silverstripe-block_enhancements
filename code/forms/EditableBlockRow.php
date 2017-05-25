@@ -328,6 +328,7 @@ class EditableBlockRow extends RequestHandler implements GridField_HTMLProvider,
         if ($form->Fields()->hasTabSet() && ($root = $form->Fields()->findOrMakeTab('Root')) && $root->Template == 'CMSTabSet') {
             $root->setTemplate('');
             $form->removeExtraClass('cms-tabset');
+            $root->addExtraClass('ss-editable-row');
         }
 
         $callback = $this->getItemEditFormCallback();
@@ -360,12 +361,15 @@ class EditableBlockRow extends RequestHandler implements GridField_HTMLProvider,
             if ($editable = $grid->getConfig()->getComponentByType('GridFieldDetailForm')) {
                 if ($editable->getFields()) {
                     $fields = $editable->getFields();
-                } else {
-                    $fields = \Object::create($editable->getItemRequestClass(), $grid, $editable, $record,
-                        $grid->getForm()->getController(), $editable->getName())->ItemEditForm()->Fields();
+//                } else {
+//                   $fields = \Object::create($editable->getItemRequestClass(), $grid, $editable, $record,
+//                        $grid->getForm()->getController(), $editable->getName())->ItemEditForm()->Fields();
                 }
             }
         }
+        if (!$fields) {
+			$fields = $record->hasMethod('getEditableRowFields') ? $record->getEditableRowFields($grid) : $record->getCMSFields();
+		}
 
         if ($removeEditableColumnFields && $grid && $editable = $grid->getConfig()->getComponentByType('GridFieldEditableColumns')) {
             $editableColumns = $editable->getFields($grid, $record);
@@ -407,7 +411,7 @@ class EditableBlockRow extends RequestHandler implements GridField_HTMLProvider,
     {
         $id = $request->param('ID');
         $record = $this->getRecordFromRequest($grid, $request);
-        $form = $this->getForm($grid, $record);
+        $form = $this->getForm($grid, $record, $this->getRemoveEditableColumnFields());
         $class = $this->getComponentName();
 
         foreach ($form->Fields()->dataFields() as $field) {
@@ -428,7 +432,7 @@ class EditableBlockRow extends RequestHandler implements GridField_HTMLProvider,
     public function loadItem($grid, $request)
     {
         $record = $this->getRecordFromRequest($grid, $request);
-        $form = $this->getForm($grid, $record);
+        $form = $this->getForm($grid, $record, $this->getRemoveEditableColumnFields());
         //$form = new \Form($this, 'something', $record->getCMSFields(), FieldList::create());
         $this->renameFieldsInCompositeField($form->Fields(), $grid, $record);
 
@@ -491,6 +495,14 @@ class EditableBlockRow extends RequestHandler implements GridField_HTMLProvider,
         return $this->workingGrid ? \Controller::join_links($this->workingGrid->Link($this->urlSegment), $action,
             $id) : null;
     }
+
+    public function getRemoveEditableColumnFields(){
+		return $this->removeEditableColumnFields;
+	}
+
+	public function setRemoveEditableColumnFields($removeEditableColumnFields){
+		$this->removeEditableColumnFields = $removeEditableColumnFields;
+	}
 
     protected function renameFieldsInCompositeField($fields, $grid, $record)
     {
