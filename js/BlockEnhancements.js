@@ -1,6 +1,10 @@
 (function($) {
     
 	$.entwine("ss", function($) {
+		$('.ss-gridfield-editable-row--fields .ss-tabset').entwine({
+			// Ignore tab state so it will not be reopened on form submission.
+			IgnoreTabState: true
+		});
         
         // Haven't been able to 'arrive' at the select before the Leftandmain script does
         // and applies chozen, despite having way more specific selectors...
@@ -25,7 +29,7 @@
             //}, // override LeftAndMain.js line ~1266 (Chosen)
     
             onadd: function(){
-console.log($.cookie('js-project-dir'));
+// console.log($.cookie('js-project-dir'));
                 var projectdir = this.data('project-dir');
                 if(!projectdir) projectdir = $.cookie('js-project-dir'); // try & get from cookie
                 if(!projectdir) projectdir = 'mysite'; // guess default...
