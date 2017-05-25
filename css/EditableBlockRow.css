@@ -62,3 +62,80 @@ body.cms fieldset.ss-gridfield-editable-row--fields .middleColumn button:hover {
 	color:black !important;
 	box-shadow:0 0 5px #b3b3b3;
 }
+/********/
+.cms .ss-gridfield-editable-row--row .field {
+	border-bottom:0;
+}
+
+.cms .ss-gridfield-editable-row--row h6, .cms .ss-gridfield-inline-new-extended--row h6 {
+	padding: 5px
+}
+
+.cms .ss-gridfield-editable-row--row td>h6, .cms .ss-gridfield-inline-new-extended--row td>h6, .ss-gridfield-editable-row--fields h3[id] {
+	background: #c2cdd4;
+	border-bottom: #b6c3cb;
+	padding: 10px;
+	font-size: 13px;
+	font-weight: 700
+}
+
+.cms .ss-gridfield-editable-row--row .field .TreeDropdownField, .cms .ss-gridfield-editable-row--row .field input.text, .cms .ss-gridfield-editable-row--row .field select,
+	.cms .ss-gridfield-editable-row--row .field textarea, .cms .ss-gridfield-inline-new-extended--row .field .TreeDropdownField, .cms .ss-gridfield-inline-new-extended--row .field input.text,
+	.cms .ss-gridfield-inline-new-extended--row .field select, .cms .ss-gridfield-inline-new-extended--row .field textarea {
+	max-width: 452px !important
+}
+
+.cms table.ss-gridfield-table tbody td.ss-gridfield-editable-row--icon-holder {
+	width: 1px
+}
+
+.cms .ss-gridfield-editable-row--row_hide {
+	display: none
+}
+
+.cms .ss-gridfield-editable-row--loading * {
+	opacity: .2 !important
+}
+
+.cms .ss-gridfield-editable-row--loading .ss-gridfield-editable-row--icon-holder {
+	opacity: 1 !important;
+	background: url(../../framework/admin/images/spinner.gif) center center no-repeat !important
+}
+
+.cms table.ss-gridfield-table tr td.ss-gridfield-editable-row--fieldsHolder {
+	padding: 0
+}
+
+.cms .ss-gridfield-editable-row--row .ss-gridfield-editable-row--fields, .cms .ss-gridfield-editable-row--row .ss-gridfield-editable-row--fields .ss-gridfield,
+	.ss-gridfield-editable-row--fields .ui-tabs .ui-tabs-panel {
+	padding: 0
+}
+
+.cms .ss-gridfield-editable-row--row .field:not(:first-of-type) label.left{
+	border-top: 1px solid #d0d3d5;
+}
+.cms .ss-gridfield-editable-row--fields h3[id] {
+	margin: 0 !important;
+	margin-top: 15px !important;
+	background: #d1d9df
+}
+
+.cms .ss-gridfield-editable-row--fields .field span.readonly {
+	padding-top: 8px !important
+}
+.cms .ss-gridfield-editable-row--reference:hover,
+.cms .ss-gridfield-editable-row--reference+tr>.ss-gridfield-editable-row--fieldsHolder:hover
+	{
+	background-color: #fffad6 !important
+}
+.cms table.ss-gridfield-table tr td .mceEditor tbody {
+    background-color: transparent
+}
+
+.cms table.ss-gridfield-table tr td .mceEditor tr:hover {
+    background-color: transparent
+}
+
+.cms table.ss-gridfield-table tr td .mceEditor td {
+    padding: 0
+}
