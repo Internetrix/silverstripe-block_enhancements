@@ -36,6 +36,8 @@ class EditableBlockRow extends RequestHandler implements GridField_HTMLProvider,
 
     protected $validator;
 
+    protected $removeEditableColumnFields = true;
+
     private $workingGrid;
 
     private static $allowed_actions = array(
